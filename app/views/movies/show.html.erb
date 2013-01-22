@@ -1,0 +1,32 @@
+<p>
+  <b>Title:</b>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <b>Director:</b>
+  <%= @movie.director.name %>
+</p>
+
+<p>
+  <b>Cast:</b>
+  <ul>
+    <% # roles_in_movie = Role.find_all_by_movie_id(@movie.id) %>
+    <% @movie.actors.each do |actor| %>
+    <li><%= actor.name %></li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <b>Upvoted by:</b>
+  <ul>
+  <%# @movie.users.each do |user| %>
+    <li><%#= user.name %></li>
+  <%# end %>
+  </ul>
+</p>
+
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>
